@@ -1,0 +1,5 @@
+for x in []:
+    if x != "맨유":
+        break;
+else:
+    print("모두 맨유입니다.")
