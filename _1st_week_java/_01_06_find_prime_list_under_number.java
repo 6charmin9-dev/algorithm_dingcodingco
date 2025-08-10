@@ -21,7 +21,7 @@ public class _01_06_find_prime_list_under_number extends TempleteUtils {
         for (int i=2; i<=number; i++) {
             boolean isPrime = true;
             for (int prime : primes) {
-                if (prime * prime > i && i % prime == 0) {
+                if (prime * prime <= i && i % prime == 0) {
                     isPrime = false;
                     break;
                 }
