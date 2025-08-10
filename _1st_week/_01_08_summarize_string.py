@@ -2,14 +2,17 @@ def summarize_string(input_str):
     alphabet_to_occurrence_cnt = {}
     for alphabet in input_str:
         alphabet_to_occurrence_cnt[alphabet] = alphabet_to_occurrence_cnt.get(alphabet, 0) + 1
-        print(f"alphabet = {alphabet}, count = {alphabet_to_occurrence_cnt[alphabet]}")
+        # print(f"alphabet = {alphabet}, count = {alphabet_to_occurrence_cnt[alphabet]}")
     result = ""
     for entry in alphabet_to_occurrence_cnt.items():
         if len(result) != 0:
-            result += "/"
-        print(f"entry = {entry}")
-        result += f"{entry[0]}{entry[1]}"
+            result.append("/")
+        # print(f"entry = {entry}")
+        result.append(f"{entry[0]}{entry[1]}") # O(N^2)
     return result
+
+# 시간복잡도: O(N)
+# 공간복잡도: O(1)
 
 
 def summarize_string2(target_string):
