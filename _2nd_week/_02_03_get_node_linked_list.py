@@ -25,7 +25,7 @@ class LinkedList:
         cur = self.head
         for i in range(index):
             cur = cur.next
-            if (cur is None):
+            if cur is None:
                 raise IndexError("Index out of bounds")
         return cur.data
 

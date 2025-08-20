@@ -13,8 +13,7 @@ def is_available_to_order2(menus, orders):
     # 이 부분을 채워보세요!
     menus.sort() # 시간 복잡도: O(n log n)
     for order in orders:
-        exists = binary_search(menus, order)
-        if exists is False:
+        if not binary_search(menus, order):
             return False
     return True
 

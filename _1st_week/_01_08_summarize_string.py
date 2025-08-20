@@ -18,19 +18,33 @@ def summarize_string(input_str):
 def summarize_string2(target_string):
     # 이 부분을 채워보세요!
     n = len(target_string)
-    count = 0
+    count = 1
     result_str = ''
 
     for i in range(n - 1):
         if target_string[i] == target_string[i + 1]:
             count += 1
         else:
-            result_str += target_string[i] + str(count + 1) + '/'
-            count = 0
+            result_str += target_string[i] + str(count) + '/'
+            count = 1
 
-    result_str += target_string[n - 1] + str(count + 1)
+    result_str += target_string[n - 1] + str(count)
 
     return result_str
+
+def summarize_string(target_string):
+    cnt = 1
+    char = target_string[0]
+    result = ''
+    for i in range(1, len(target_string)):
+        if target_string[i] != char:
+            result += char + str(cnt) + '/'
+            char = target_string[i]
+            cnt = 1
+        else:
+            cnt += 1
+    result += char + str(cnt)
+    return result
 
 input_str = "acccdeee"
 
